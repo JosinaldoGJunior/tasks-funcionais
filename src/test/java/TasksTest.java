@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TasksTest {
 
- public WebDriver acessarAplicaçao(){
+ public WebDriver acessarAplicacao(){
      WebDriver driver = new ChromeDriver();
      driver.navigate().to("http://localhost:8001/tasks");
      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -17,7 +17,7 @@ public class TasksTest {
 
  @Test
  public void deveSalvarComSucesso (){
-     WebDriver driver = acessarAplicaçao();
+     WebDriver driver = acessarAplicacao();
      try {
         driver.findElement(By.id("addTodo")).click();
         driver.findElement(By.id("task")).sendKeys("Teste Via Selenium");
@@ -32,7 +32,7 @@ public class TasksTest {
 
 @Test
  public void naoDeveSalvarTarefaSemDescricao (){
-     WebDriver driver = acessarAplicaçao();
+     WebDriver driver = acessarAplicacao();
      try {
         driver.findElement(By.id("addTodo")).click();
         driver.findElement(By.id("dueDate")).sendKeys("10/10/2030");
@@ -45,7 +45,7 @@ public class TasksTest {
 }
 @Test
  public void naoDeveSalvarTarefaSemData (){
-     WebDriver driver = acessarAplicaçao();
+     WebDriver driver = acessarAplicacao();
      try {
         driver.findElement(By.id("addTodo")).click();
          driver.findElement(By.id("task")).sendKeys("Teste Via Selenium");
@@ -58,7 +58,7 @@ public class TasksTest {
 }
     @Test
     public void naoDeveSalvarTarefaComDataPassada (){
-        WebDriver driver = acessarAplicaçao();
+        WebDriver driver = acessarAplicacao();
         try {
             driver.findElement(By.id("addTodo")).click();
             driver.findElement(By.id("task")).sendKeys("Teste Via Selenium");
